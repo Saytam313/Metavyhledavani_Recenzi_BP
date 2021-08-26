@@ -1,0 +1,23 @@
+{
+	"dataSource":"/mnt/data-2/feeds_crawling/big_brother/workplace/4-tagged/cs_media/",
+	"specialProduct":{
+		"kniha":[
+			{"portal":"idnes","productName":"""ArticleProduct=page_soup.findAll('h3',{'itemprop':'name'})[0].text"""},
+			{"portal":"iliteratura","productName":"""	
+													OriginalHead=page_soup.findAll('h1',{'itemprop':'name headline'})[0]
+													OriginalHead.select('br')[0].replace_with('|')
+													ArticleProduct=OriginalHead.text.split('|')[-1].strip()
+			"""}
+		],
+		"film":[
+			{"portal":"lidovky","productName":"""ArticleProduct=page_soup.find("table",{"class","complete not4bbtext"}).find('span').text"""},
+			{"portal":"idnes","productName":"""ArticleProduct=page_soup.findAll("h3",{"itemprop":"name"})[0].text"""},
+			{"portal":"novinky","productName":"""ArticleProduct=page_soup.findAll("div",{"class":"infobox"}).text"""}
+		],
+		"videohra":[
+			{"portal":"idnes","productName":"""ArticleProduct=page_soup.findAll("h2",{"itemprop":"name"})[0].text"""},
+			{"portal":"gamepark","productName":"""ArticleProduct=page_soup.findAll("h1",{"class":"entry-title"})[0].text"""},
+			{"portal":"hrej","productName":"""ArticleProduct=page_soup.findAll("h1",{"itemprop":"itemreviewed"})[0].text"""}
+		]
+	}
+}
